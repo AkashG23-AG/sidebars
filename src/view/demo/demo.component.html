@@ -1,0 +1,211 @@
+<div class="ax-card" style="padding: 15px;">
+  <div class="gc col-8" style="margin-bottom: 10px;">
+
+    <div>label</div>
+    <div>label</div>
+    <div>label</div>
+    <div>label</div>
+
+    <div>label</div>
+    <div>label</div>
+    <div>label</div>
+    <div>label</div>
+  </div>
+  <div class="grid-2">
+    <div></div>
+    <div class="border-l-t-r">
+      <div class="arrow-down"></div>
+    </div>
+    <div class="blue-right"></div>
+  </div>
+  <div class="gc col-8">
+
+    <div class="flex-center">
+      <div class="circle"></div>
+    </div>
+    <div class="flex-center">
+      <div class="daimond"></div>
+    </div>
+    <div class="flex-center">
+      <div class="circle"></div>
+    </div>
+    <div class="flex-center">
+      <div class="circle"></div>
+    </div>
+
+    <div class="flex-center">
+      <div class="daimond"></div>&nbsp;
+    </div>
+    <div class="flex-center">
+      <div class="circle"></div>
+    </div>
+    <div class="flex-center">
+      <div class="circle"></div>
+    </div>
+    <div class="flex-center">
+      <div class="circle"></div>
+    </div>
+  </div>
+  <div class="grid-3">
+    <div>
+    </div>
+    <div class="border-l-b-r">
+    </div>
+    <div>
+      <div class="arrow-up"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="gc col-">
+  <div class="gc gr-gap-5 gc col-3">
+    <ul style="border: 2px solid grey; border-radius: 6px;">
+      <div class="ax-card-header" (click)="openAccordian(1)">
+        <div class="heading-bar">
+          <h6>Header1</h6>
+        </div>
+      </div>
+      <li *ngIf="visible1">
+        <p>1.Lorem,</p>
+      </li>
+    </ul>
+
+    <ul style="border: 2px solid grey; border-radius: 6px;">
+      <div class="ax-card-header" (click)="openAccordian(2)">
+        <div class="heading-bar">
+          <h6>Header2</h6>
+        </div>
+      </div>
+      <li *ngIf="visible2">
+
+        <p>2.Lorem,</p>
+      </li>
+    </ul>
+
+    <ul style="border: 2px solid grey; border-radius: 6px;">
+      <div class="ax-card-header" (click)="openAccordian(3)">
+        <div class="heading-bar">
+          <h6>Header3</h6>
+        </div>
+      </div>
+      <li *ngIf="visible3">
+        <p>3.Lorem,</p>
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<!-- <div class="ax-card">
+    <div class="flex">
+        <label>Add an item: <input #newItem></label>
+        <button (click)="addNewItem(newItem.value)">Add</button>
+    </div>
+</div> -->
+
+<!-- <div class="ax-card"> 
+  <div>
+      <ul class="grid-7">
+        <li>
+            <div>label</div>
+            <div class="blue-border ml-13 mb-10"></div>
+            <div class="main-box">
+                <div class="circle top-line"></div>
+                <div class="center-line"></div>
+            </div>
+        </li>
+        <li>
+            <div>label2</div>
+            <div class="blue-border mb-10"></div>
+            <div class="main-box">
+                <div class="circle bottom-line"></div>
+                <div class="center-line"></div>
+            </div>
+            <div class="blue-border ml-13 mt-10"></div>
+        </li>
+          <li>
+            <div>label3</div>
+            <div class="blue-border mb-10"></div>
+            <div class="main-box">
+                <div class="circle bottom-line"></div>
+                <div class="center-line"></div>
+            </div>
+            <div class="blue-border ml-13 mt-10"></div>
+        </li>
+      </ul>
+  </div>  
+</div> -->
+
+<div class="">
+  <ul class=" gc col-5 ax-pt-30">
+    <li class="ax-card ax-p-10" *ngFor="let question of list_question;let i = index"
+      (click)="seleteQuestion(question.id)">
+      <div *ngIf="selctedQue!==question.id">{{question.que}} </div>
+      <div *ngIf="selctedQue==question.id">{{question.ans}}</div>
+    </li>
+  </ul>
+  <!-- <div>
+    Selected name: {{selectedQue}} <br>
+    Selected type: {{selectedAns}}
+  </div> -->
+</div>
+
+<div class="ax-card colorWhite">
+  <div class="ax-p-6 gc col-2">
+    <div class="ax-card">
+      <div class="flex">
+        <div>Total Count:<strong *ngIf="count">{{count}}</strong></div>
+        <label>Name: <input type="text" id="userInput" [(ngModel)]="inputValue" placeholder="Enter Your Name"></label>
+        <button (click)="addValue(inputValue)">Add</button>
+        <button (click)="updatevalue()">Update</button>
+      </div>
+
+      <div class="html-table">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+
+          <tr *ngFor="let data of tableData; index as i;">
+            <td>{{data}}</td>
+            <td class="flex gc">
+              <button (click)="editData(i)">Edit</button>
+              <button (click)="removeItem(i)">Remove</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div>
+<div class="ax-card">
+   <div>
+    <button  (click)="changeImages(imgdata)">Click</button>
+    <!-- <button *ngFor="let imageButton of imageButtons; let i = index" (click)="changeImages(imageButton)" class="button">{{i}}</button> -->
+   </div>
+   <div *ngFor="let img of imgdata;let i = index">
+    <img class="icon-wrapper" src="{{img.images}}" alt="Image" height="100px"/>
+   </div>
+   
+</div>
+<div class>
+  <ul class="horizontal" id="nav">
+    <li 
+      *ngFor="let state of states"
+      (click)="setStateAsActive(state)">
+      <a [class.active]="state === activeState">
+        {{ state }}
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
